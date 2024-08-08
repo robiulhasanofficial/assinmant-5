@@ -23,7 +23,7 @@
 </head>
 <body class="Raleway mx-5">
     
-    <header   >
+    <header id="head" class=""  >
         <nav>
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
@@ -73,7 +73,7 @@
               Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .
             </p>
             <div class="text-center  border-black">
-              <button class="btn btn-active bg-[#1DD100] ">Buy Tickets</button>
+              <button onclick="payTiket()" class="btn btn-active bg-[#1DD100] ">Buy Tickets</button>
           </div>
           </div>
         </div>
@@ -111,7 +111,7 @@
         </biv>
         </div>
     </header>
-    <main>
+    <main id="main" class="hidden">
       <!-- OFFER card -->
       <section class="my-24">
         <div class="text-center my-24">
@@ -182,7 +182,7 @@
           </div>
           <div class="flex w-[180px] h-[56px] bg-[#bef3d0] rounded-xl items-center space-x-4 p-5" >
             <img src="./images/seat-green.png" alt="">
-            <p class="Inter text-[#1DD100] "><span>40</span> Seats left</p>
+            <p class="Inter text-[#1DD100] "><span id="min" >40</span> Seats left</p>
           </div>
         </div>
         <div class=" lg:w-[808px] w-[320px] h-auto lg:h-[258px] bg-[#F7F8F8] rounded-3xl p-5 my-4">
@@ -235,12 +235,12 @@
                    <h1 class="Inter font-semibold">Select Your Seat</h1>
                  </div>
                  <div class="flex justify-between border-dashed border-y-2 p-2 ">
-                  <div class="flex space-x-3">
+                  <div  class="flex space-x-3">
                    <img src="./images/seat-green.png" alt="" srcset="">
                    <h1> Available</h1>
                   </div>
-                    <div class="flex space-x-3">
-                     <img src="./images/seat-green-filled.png" alt="" srcset="">
+                    <div  id="activ" class="flex space-x-3 hidden">
+                     <img  src="./images/seat-green-filled.png" alt="" srcset="">
                      <h1>Selected</h1>
                    </div>
                  </div>
@@ -250,93 +250,93 @@
                  </div>
                  <div class=" space-y-5">
                    <!-- row-1 -->
-                    <div class="flex space-x-5">
-                     <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">A</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">A2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A4 </div>
+                     <div  class=" flex space-x-5">
+                     <div  class=" w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center" >A</div>
+                     <div  class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A1 </div>
+                     <div  class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">A2 </div>
+                     <div  class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A3 </div>
+                     <div  class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">A4 </div>
                     </div>
                     <!-- f-1-->
                     <!-- row-2 -->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">B</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">B2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">B2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">B4 </div>
                     </div>
                     <!-- f-2-->
                       <!-- row-3-->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">C</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">C2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">C2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">C4 </div>
                     </div>
                     <!-- f-3 -->
                     <!-- row-4 -->
                     <div class="flex space-x-5">
-                     <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">D</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">D2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D4 </div>
+                     <div class=" w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">D</div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">D2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">D4 </div>
                     </div>
                     <!-- f-4 -->
                     <!-- row-5 -->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">E</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">E2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">E2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">E4 </div>
                     </div>
                     <!-- f-5 -->
                     <!-- row-6 -->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">F</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">F2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">F2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">F4 </div>
                     </div>
                     <!-- f-6 -->
                     <!-- row-7-->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">G</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">G2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">G2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">G4 </div>
                     </div>
                     <!-- f-7 -->
                     <!-- row-8 -->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">H</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">H2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">H2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">H4 </div>
                     </div>
                     <!-- f-8 -->
                     <!-- row-9-->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">I</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">I2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">I2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">I4 </div>
                     </div>
                     <!-- f-9-->
                     <!-- row-10 -->
                     <div class="flex space-x-5">
                      <div class="w-[80px] h-[40px] bg-white rounded-2xl p-2 flex justify-center">J</div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J1 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">J2 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J3 </div>
-                     <div class="w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J4 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J1 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-centermr-10">J2 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J3 </div>
+                     <div class="add-btn w-[80px] h-[40px] bg-[#F7F8F8] rounded-2xl p-2 flex justify-center">J4 </div>
                     </div>
                     <!-- f-10 -->
                    
@@ -359,42 +359,29 @@
               <div class="flex items-center space-x-4 ">
                 <h1>Seat:</h1>
                 <!-- sssssssssssssss+++++++ -->
-                <h1 class="text-white text-xl bg-green-500 rounded-2xl p-1 Inter w-[50px] flex justify-center">2</h1>
+                <h1 id="set" class="text-white text-xl bg-green-500 rounded-2xl p-1 Inter w-[50px] flex justify-center">0</h1>
               </div>
               <h1 class="text-xl">Class</h1>
               <h1 class="text-xl">Price</h1>
              </div>
              <!-- tket box -->
-             <div class="Inter  border-dashed border-y-2 border-black">
-              <!-- c-1 -->
-              <div class=" flex justify-between my-4">
-              <h1 class="text-xl">C2</h1>
-              <h1 class="text-xl ml-[90px]">Economoy</h1>
-              <h1 class="text-xl">550</h1>
-              </div>
-              <!-- f-1 -->
-               <!-- c-2 -->
-              <div class=" flex justify-between my-4">
-                <h1 class="text-xl">C2</h1>
-                <h1 class="text-xl ml-[90px]">Economoy</h1>
-                <h1 class="text-xl">550</h1>
-                </div>
-                <!-- f-2 -->
+             <div id="box" class="Inter  border-dashed border-y-2 border-black"> 
              </div>
              <div class="flex justify-between my-4  Inter font-semibold text-2xl">
               <h1>Total Price</h1>
-              <h1>BDT 1100</h1>
+              <h1 >BDT:<span id="tot">0000</span> </h1>
               </div>
               <div class="">
                 <input
+                id="opi"
                   type="text"
                   placeholder="Have any copupon?"
                   class="input input-bordered input-primary w-full max-w-xs" />
-                  <button class="btn bg-[#1DD100]">Apply</button>
+                  <button disabled  id="gop" class="w-[70px] h-[50px] Inter font-semibold border-2 border-black rounded-lg" >Apply</button>
               </div>
               <div class="flex justify-between my-4  Inter font-semibold text-2xl">
                 <h1>Grand Total</h1>
-                <h1>BDT 1100</h1>
+                <h1>BDT <span id="got">0000</span></h1>
                 </div>
                 </div>
                 <!-- from -->
@@ -402,6 +389,7 @@
                   <div class="">
                     <h1 class="text-xl">Passenger Name*</h1>
                     <input
+                    id="nma"
                     type="text"
                     placeholder="Type here"
                     class="input input-bordered input-sm w-full max-w-xs" />
@@ -409,19 +397,22 @@
                   <div class=""> 
                     <h1 class="text-xl">Phone Number*</h1>
                     <input
-                    type="text"
+                    id="numder"
+
+                    type="number"
                     placeholder="Enter your phone number"
                     class="input input-bordered input-sm w-full max-w-xs" />
                   </div>
                   <div class="">
                     <h1 class="text-xl">Email ID</h1>
                     <input
+
                     type="text"
                     placeholder="Enter your email id"
                     class="input input-bordered input-sm w-full max-w-xs" />
                   </div>
                   <div class="">
-                    <button class="w-[333px] h-[40px] bg-[#1DD100] rounded-xl">Next</button>
+                    <button id="next" class="w-[333px] h-[40px] bg-[#1DD100] rounded-xl">Next</button>
                   </div>
                   <div class="flex space-x-6 Inter">
                     <a href="">Terms and Conditions</a>
@@ -436,14 +427,23 @@
         
         
         </div>
-        
-        
-
-
       </section>
     </main>
+    <section id="lam" class="w-[1440px] h-[856px] bg-[#F2F1F1] flex items-center justify-center hidden">
+      <div class="text-center w-[728px] h-[481px] bg-[#FFFFFF] flex items-center justify-center">
+       <div class="space-y-4">
+        <div class="flex justify-center mx-auto">
+          <img src="./images/success.png" alt="" srcset="">
+        </div>
+        <h1 class="text-[#20AE5C] ">SUCCESS</h1>
+        <p>Thank you for Booking Our Bus Seats.<br> We are working hard to find the best service and deals for you. </p>
+        <p class="Inter">Shortly you will find a confirmation in your email.</p>
+        <Button id="SUCCESS" class="btn bg-[#20AE5C] text-white rounded-3xl w-[300px] h-[56px]" >Continue</Button>
+       </div>
+      </div>
+    </section>
     
-      <footer class="footer bg-black text-white p-10 my-10">
+      <footer id="footer" class="footer bg-black text-white p-10 my-10">
         <nav>
           <h6 class=" text-4xl">P-Ticket</h6>
           <a class="link link-hover">P-Ticket is a digital platform to make your<br> daily commuting better.</a>
@@ -474,8 +474,9 @@
           </div>
         </nav>
       </footer>
+      
    
-    <script src=""></script>
-    <script src=""></script>
+    <script src="./Java File/index.js"></script>
+    <script src="./Java File/java main.js"></script>
 </body>
 </html>
