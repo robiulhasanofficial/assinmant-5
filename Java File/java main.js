@@ -120,9 +120,4 @@ function payTiket(){
    
   contino()
 }
-  
-
-   
-   
-
-  })
+)
