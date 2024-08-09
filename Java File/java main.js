@@ -85,6 +85,21 @@ function payTiket(){
       removeClass('gop','bg-[#1DD100]')
    }
   })
+  document.getElementById('numder').addEventListener("keyup",function(even){
+    const text=even.target.value ;
+    const baget=document.getElementById('tot').innerText;
+  const nlop=parseInt(baget);
+   
+  if(text>0 && nlop>100){
+    const ftg= document.getElementById('next')
+    ftg.removeAttribute('disabled')
+  }
+  else{
+    const ftg= document.getElementById('next')
+    ftg.setAttribute('disabled',true)
+
+  }
+  })
   document.getElementById('gop').addEventListener("click",function(){
     const input=document.getElementById('opi');
     const vbn=input.value;
@@ -104,13 +119,18 @@ function payTiket(){
     removBgtexr('footer')
   }
   
+  
   document.getElementById('next').addEventListener('click',function(){ 
     const baget=document.getElementById('tot').innerText;
     const nlop=parseInt(baget);
     const get=document.getElementById('numder')
     const lop=get.value;
+   
     if( nlop>100 && lop>0){
+      const gik=document.getElementById('next')
   contino()
+  
     }
+    
 }
 )
