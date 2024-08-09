@@ -9,10 +9,12 @@ function payTiket(){
   let nume=40;
   
   for(const btn of allbtn){
+    
    btn.addEventListener("click",function(e){
     const baget=document.getElementById('tot').innerText;
-  const conbartad=parseInt(baget);
-  if(conbartad<2200){
+  const oonbartad=parseInt(baget);
+    
+  if(oonbartad<2200){
     addtext('activ')
     btn.classList.add('bg-[#1DD100]')
     btn.classList.remove('bg-[#F7F8F8]')
@@ -42,24 +44,20 @@ function payTiket(){
    div.appendChild(p2)
    div.appendChild(p3)
    box.appendChild(div)
+   btn.setAttribute('disabled',true)
+ 
    const tolel=document.getElementById('tot').innerText
    const tolelnum=parseInt(tolel)
    document.getElementById('tot').innerText=tolelnum+550;
    const gatolel=document.getElementById('got').innerText
    const gtolelnum=parseInt(gatolel)
    document.getElementById('got').innerText=gtolelnum+550;
-
-
   }
   else{
-    alert('Dont pay Tiket')
+    alert('You cannot buy more than four seats')
   }
-
-    
-})
+  })
 }
-
-
   function granttolo(){
     const tolel=document.getElementById('tot').innerText
    const tolelnum=parseInt(tolel)
@@ -71,39 +69,34 @@ function payTiket(){
     const tolelnum=parseInt(tolel)
     const tax=((tolelnum*20)/100)
     document.getElementById('got').innerText=tolelnum-tax;
-    
   }
-  document.getElementById('opi').addEventListener("keyup",function(even){
+   document.getElementById('opi').addEventListener("keyup",function(even){
     const text=even.target.value ;
-    
-    if(text==='NEW15'||text==='Couple 20'){
+    const baget=document.getElementById('tot').innerText;
+  const nlop=parseInt(baget);
+    if(nlop>=2000 && text==='NEW15'||text==='Couple 20'){
       const but=document.getElementById('gop')
       but.removeAttribute('disabled')
-      AddClass('gop','bg-[#1DD100]')
-      
+      AddClass('gop','bg-[#1DD100]') 
     }
     else{
       const but=document.getElementById('gop');
       but.setAttribute('disabled',true)
       removeClass('gop','bg-[#1DD100]')
-
-    }
-    
-
+   }
   })
-
-
   document.getElementById('gop').addEventListener("click",function(){
     const input=document.getElementById('opi');
-     const vbn=input.value;
-     input.value=""
-     if (vbn==='NEW15'){
-        granttolo()
-     }
-     else if(vbn==='Couple 20'){
-      colp()
-     }
-  })
+    const vbn=input.value;
+    input.value=""
+    if (vbn==='NEW15'){
+       granttolo()
+    }
+    else if(vbn==='Couple 20'){
+     colp()
+    }
+   }
+  )
   function contino(){
     addtext('lam')
     removBgtexr('head')
@@ -111,13 +104,13 @@ function payTiket(){
     removBgtexr('footer')
   }
   
-  document.getElementById('next').addEventListener('click',function(){
-    const mnk=document.getElementById('nma')
-    const emnk=mnk.value;
-  const par=document.getElementById('numder')
-   const nahk=par.value;
-   
-   
+  document.getElementById('next').addEventListener('click',function(){ 
+    const baget=document.getElementById('tot').innerText;
+    const nlop=parseInt(baget);
+    const get=document.getElementById('numder')
+    const lop=get.value;
+    if( nlop>100 && lop>0){
   contino()
+    }
 }
 )
